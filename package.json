@@ -1,6 +1,6 @@
 {
   "name": "@mj-studio/next-server-util",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A React app for using Next server utility",
   "repository": {
     "type": "git",
@@ -12,7 +12,8 @@
     "release": "yarn t && zx tool/publish.mjs"
   },
   "dependencies": {
-    "@mj-studio/js-util": "^1.0.19"
+    "@mj-studio/js-util": "^1.0.19",
+    "server-only": "*"
   },
   "devDependencies": {
     "@mj-studio/eslint-config-react": "^0.1.12",
@@ -21,6 +22,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@types/react": "^18.2.20",
     "eslint": "^8.56.0",
+    "next": ">=14",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -28,21 +30,30 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.3.3",
-    "next": ">=14",
     "yup": "*"
   },
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
   },
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "esm"
   ],
   "peerDependencies": {
+    "next": ">=14",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
-    "next": ">=14",
     "yup": "*"
   },
   "author": "MJ Studio",

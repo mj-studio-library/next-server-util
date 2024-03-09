@@ -14,34 +14,18 @@ export default [
       {
         dir: 'dist',
         format: 'cjs',
-        interop: 'auto',
+        preserveModules: true,
       },
-      // {
-      //   dir: 'esm',
-      //   format: 'esm',
-      //   interop: 'auto',
-      //   preserveModules: false,
-      //   // preserveModulesRoot: 'src',
-      // },
+      {
+        dir: 'esm',
+        format: 'esm',
+        preserveModules: true,
+      },
     ],
     plugins: [
       nodeResolve({ extensions: ['.ts', '.tsx', '.js', '.jsx'] }),
       commonjs(),
       peerDepsExternal(),
-      // postcss(),
-      // babel({
-      //   extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      //   babelHelpers: 'bundled',
-      //   rootMode: 'upward',
-      //   presets: [
-      //     [
-      //       '@babel/preset-react',
-      //       {
-      //         runtime: 'automatic',
-      //       },
-      //     ],
-      //   ],
-      // }),
       ts({ tsconfig: './tsconfig.json' }),
       terser(),
     ],
