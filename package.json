@@ -1,6 +1,6 @@
 {
   "name": "@mj-studio/next-server-util",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React app for using Next server utility",
   "repository": {
     "type": "git",
