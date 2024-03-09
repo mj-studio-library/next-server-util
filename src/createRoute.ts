@@ -1,5 +1,3 @@
-import 'server-only';
-
 import { is } from '@mj-studio/js-util';
 import type { NextRequest } from 'next/server';
 import type { InferType, ObjectSchema } from 'yup';

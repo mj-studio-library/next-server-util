@@ -1,6 +1,6 @@
 {
   "name": "@mj-studio/next-server-util",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A React app for using Next server utility",
   "repository": {
     "type": "git",
@@ -12,8 +12,7 @@
     "release": "yarn t && zx tool/publish.mjs"
   },
   "dependencies": {
-    "@mj-studio/js-util": "^1.0.19",
-    "server-only": "*"
+    "@mj-studio/js-util": "^1.0.19"
   },
   "devDependencies": {
     "@mj-studio/eslint-config-react": "^0.1.12",
